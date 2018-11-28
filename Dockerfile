@@ -18,9 +18,6 @@ RUN set -ex \
             curl \
             debian-archive-keyring \
             gnupg \
-    && curl -L https://packagecloud.io/github/git-lfs/gpgkey | apt-key add - \
-    && apt-get update \
-    && apt-get install -y --no-install-recommends \
             bzip2 \
             dirmngr \
             gettext-base \

@@ -48,9 +48,9 @@ RUN set -ex \
 
 # Install dumb-init, A minimal init system for Linux containers
 # See https://engineeringblog.yelp.com/2016/01/dumb-init-an-init-for-docker.html
-ENV DUMB-INIT_VERSION 1.2.2
+ENV DUMB_INIT_VERSION 1.2.2
 RUN set -ex \
-    && curl -Lo /tmp/pkg.deb https://github.com/Yelp/dumb-init/releases/download/v$DUMB-INIT_VERSION/dumb-init_$DUMB-INIT_VERSION_amd64.deb \
+    && curl -Lo /tmp/pkg.deb https://github.com/Yelp/dumb-init/releases/download/v"$DUMB_INIT_VERSION"/dumb-init_"$DUMB_INIT_VERSION"_amd64.deb \
     && dpkg -i /tmp/pkg.deb && rm /tmp/pkg.deb \
     && rm -rf /var/lib/{apt,dpkg,cache,log}/ /tmp/* /var/tmp/*
 
@@ -58,7 +58,7 @@ RUN set -ex \
 # See https://github.com/tianon/gosu
 ENV GOSU_VERSION 1.10
 RUN set -ex \
-    && curl -Lo /usr/local/bin/gosu https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-amd64 \
+    && curl -Lo /usr/local/bin/gosu https://github.com/tianon/gosu/releases/download/"$GOSU_VERSION"/gosu-amd64 \
     && chmod +x /usr/local/bin/gosu
 
 # Copy a simple wait-for script

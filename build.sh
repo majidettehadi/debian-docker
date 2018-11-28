@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 
 # Read arg from build.properties
-# DEBIAN_VERSION must be stretch or jessie
 
 set -x
 . build.properties
 docker build --force-rm  \
-    -t $REPO_NAME:$DEBIAN_VERSION \
-    --build-arg DEBIAN_VERSION=$DEBIAN_VERSION \
+    -t $REPO_NAME:stretch \
+    --build-arg DEBIAN_VERSION=stretch \
+    --build-arg TIMEZONE=$TIMEZONE .
+docker build --force-rm  \
+    -t $REPO_NAME:jessie \
+    --build-arg DEBIAN_VERSION=jessie \
     --build-arg TIMEZONE=$TIMEZONE .

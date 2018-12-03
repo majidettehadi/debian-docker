@@ -60,5 +60,7 @@ RUN set -ex \
     && curl -Lo /usr/local/bin/gosu https://github.com/tianon/gosu/releases/download/"$GOSU_VERSION"/gosu-amd64 \
     && chmod +x /usr/local/bin/gosu
 
-# Copy a simple wait-for script
-COPY ../files/wait-for /usr/local/bin/
+# Copy a simple wait-for script from https://raw.githubusercontent.com/eficode/wait-for/master/wait-for
+RUN set -ex \
+    && curl -Lo /usr/local/bin/wait-for https://raw.githubusercontent.com/eficode/wait-for/master/wait-for \
+    && chmod +x /usr/local/bin/wait-for

@@ -1,8 +1,7 @@
-ARG DEBIAN_VERSION
-FROM debian:${DEBIAN_VERSION}-slim
+FROM debian:stretch-slim
 
 # Add Timezone according build args
-ARG TIMEZONE
+ARG TIMEZONE='Asia/Tehran'
 RUN set -ex \
     && export DEBIAN_FRONTEND=noninteractive \
     && echo "$TIMEZONE" > /etc/timezone \
@@ -62,4 +61,4 @@ RUN set -ex \
     && chmod +x /usr/local/bin/gosu
 
 # Copy a simple wait-for script
-COPY files/wait-for /usr/local/bin/
+COPY ../files/wait-for /usr/local/bin/

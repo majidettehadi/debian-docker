@@ -1,5 +1,5 @@
 # debian-docker
-Custom Debian (stretch and jessie) Docker image.
+Custom Debian (stretch, jessie and buster) Docker image.
 Build stretch and jessie from official slim debian with **dumb-init**, **gosu** and **some useful debian packages**.
 
 # List of packages

@@ -1,4 +1,5 @@
-FROM debian:jessie-slim
+ARG DEBIAN_VERSION=buster
+FROM debian:$DEBIAN_VERSION-slim
 
 # Add Timezone according build args
 ARG TIMEZONE='Asia/Tehran'

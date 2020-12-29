@@ -17,6 +17,7 @@ RUN set -ex \
             ca-certificates \
             curl \
             debian-archive-keyring \
+            dnsutils \
             gnupg \
             bzip2 \
             dirmngr \
